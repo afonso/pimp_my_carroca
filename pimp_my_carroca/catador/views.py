@@ -7,6 +7,7 @@ from pimp_my_carroca.catador.forms import CatadorForm, BuscaCatadorRegiao
 from pimp_my_carroca.catador.models import Catador
 from geolocation.google_maps import GoogleMaps
 from flask.ext.googlemaps import Map
+from catadores_app import base
 
 
 blueprint = Blueprint(
@@ -14,6 +15,14 @@ blueprint = Blueprint(
     url_prefix='/catador',
     static_folder="../static"
 )
+
+
+@blueprint.route('/inserir_base', methods=['GET'])
+@login_required
+def inserir_base():
+    for catador in base:
+        Catador(**catador).save()
+    return redirect(url_for('catador.catadores_lista'))
 
 
 @blueprint.route('/', methods=['GET', 'POST'])

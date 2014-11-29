@@ -1,3 +1,5 @@
+#! -*- coding: utf-8 -*-
+
 from pimp_my_carroca.database import (
     Column,
     db,

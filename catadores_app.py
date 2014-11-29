@@ -1,4 +1,6 @@
-[{
+#! -*- coding: utf-8 -*-
+
+base = [{
     "nome": "Rafael dos Santos",
     "telefone": "11982416387",
     "endereco": "Rua Dos Gusmões, 500",
