@@ -21,7 +21,7 @@ class ProdConfig(Config):
     """Production configuration."""
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/example'  # TODO: Change me
+    zSQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
