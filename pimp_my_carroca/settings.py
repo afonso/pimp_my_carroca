@@ -21,7 +21,11 @@ class ProdConfig(Config):
     """Production configuration."""
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    DB_NAME = 'prod.db'
+    # Put the db file in project root
+    DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(DB_PATH)
+    #SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
