@@ -3,7 +3,6 @@
 from flask import Flask, render_template
 
 from pimp_my_carroca.settings import ProdConfig
-from pimp_my_carroca.assets import assets
 from pimp_my_carroca.extensions import (
     bcrypt,
     cache,
@@ -34,7 +33,6 @@ def create_app(config_object=ProdConfig):
 
 
 def register_extensions(app):
-    assets.init_app(app)
     bcrypt.init_app(app)
     cache.init_app(app)
     db.init_app(app)
