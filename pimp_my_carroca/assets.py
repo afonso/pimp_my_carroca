@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask.ext.assets import Bundle, Environment
-
+'''
 css = Bundle(
     "css/bootstrap.css",
     "css/style.css",
@@ -15,8 +15,8 @@ js = Bundle(
     filters='jsmin',
     output="public/js/common.js"
 )
-
+'''
 assets = Environment()
 
-assets.register("js_all", js)
-assets.register("css_all", css)
+#assets.register("js_all", js)
+#assets.register("css_all", css)
